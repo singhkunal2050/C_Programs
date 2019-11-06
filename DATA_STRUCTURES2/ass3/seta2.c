@@ -1,0 +1,101 @@
+/*Create an array of n integers Accept a value x from user and search it using BINARY search [FOR SORTED DATA]  */
+
+#include<stdio.h>
+void bubble(int a[], int n);
+int binary(int a[], int lb, int ub , int key);
+main()
+{
+
+	int n,i,a[10],p,key;
+
+	printf("Enter the number of array \n");
+	scanf("%d",&n);
+
+	printf("Enter the elements \n");
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	bubble(a,n);
+
+	printf("The sorted elements are\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+			
+	printf("\nEnter the Element you want to search \n");
+	scanf("%d",&key);
+	p=binary(a,1,n,key);
+	printf("\n\n");
+	printf("The Element is at %d position\n",p);
+	
+
+
+}
+
+
+void bubble(int a[], int n)
+
+{
+	int flag=0;
+	int i,j,temp;
+	for(i=1;i<n;i++)  ///for(i=0;i<n;i++)
+	{
+		///printf("Pass=%d\n",i);
+		if(flag==1)
+		{  printf("Total Passes=%d\n",i);	break;	}
+		for(j=0;j<n-i;j++)  ///for(j=0;j<n-i-1;j++)
+		{	
+			flag=1;
+                        if(a[j]>a[j+1])
+			{				
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				flag=0;	
+				///printf("Swapping=%d\t",j);
+			}	
+
+		}
+			//printf("\n");	
+	}
+
+}
+
+
+int binary(int a[], int lb, int ub , int key)
+
+{
+				//int flag=1;
+	if(lb<=ub)
+      {	
+	int mid=(lb+ub)/2;
+	if(a[mid]==key)
+	{
+		return mid+1;
+	}			//flag=0;
+	
+			//int flag=mid;	
+	if(a[mid]>key)
+	return binary(a,lb,mid-1,key);	
+	else
+	return binary(a,mid+1,ub,key);
+
+      }
+	return -1;
+  	
+}
+
+
+/*
+
+Enter the number of array 
+8 
+Enter the elements 
+25 627 82 99 0 2 1 6 
+Total Passes=6
+The sorted elements are
+0       1       2       6       25      82      99      627
+Enter the Element you want to search 
+99
+
+The Element is at 7 position
+
+*/

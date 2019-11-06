@@ -1,0 +1,106 @@
+/* HEADER FILE FOR IMPLEMENTING Dynamic QUEUE USING LL */
+
+/*
+   STRUCT
+   INIT
+   INSERTQ
+   DELETEQ 		
+   ISEMPTY	
+
+*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct queue
+{
+	struct node *front;
+	struct node *rear;
+};
+
+struct node 
+{
+	int info;
+	struct node *next;
+};
+
+
+void initqueue(struct queue *q)
+{
+	q->rear=NULL;
+	q->front=NULL;
+}
+
+
+struct node *getnode (int value)
+{
+	struct node *temp=NULL;
+	temp=(struct node *)malloc(sizeof(struct node));
+	temp->info=value;
+	temp->next=NULL;
+	return temp;
+}
+
+
+void freenode(struct node *p)
+{
+	free(p);
+}
+
+
+void insertq(struct queue *q, int value)
+{
+	struct node *temp=getnode(value);
+	struct node *p=q->rear;
+        if(q->rear==NULL);
+	{
+		q->front=temp;
+		q->rear=temp;
+		return;	
+	}	
+
+	p->next=temp;
+	q->rear=temp;
+//	q->rear=q->rear->next;
+
+}
+
+
+int isEmpty(struct queue *q)
+{
+	printf("Im In Empty\n");
+	return q->front==NULL;
+}
+
+
+int deleteq(struct queue *q)
+{
+	struct node *temp=NULL;
+	int value;
+	if(isEmpty(q))
+		{
+			printf("*__* QUEUE UNDERFLOW *__*\n"); exit(1);
+		}
+	value=q->front->info;	
+	temp=q->front;	
+	q->front=temp->next;
+
+	if(q->front==NULL)
+		q->rear=NULL;
+	freenode(temp);
+	return value;
+} 
+
+int peek(struct queue *q)
+{
+	if(isEmpty(q))
+		{
+			printf("*__* QUEUE EMMPTY *__*\n"); exit(1);
+		}
+
+	return q->front->info;
+
+} 
+
+

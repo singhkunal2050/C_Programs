@@ -1,0 +1,74 @@
+/* Sort n Numbers using Quick Sort */
+
+#include<stdio.h>
+void quicksort(int a[], int a1, int an);
+int partition(int a[], int lb, int ub);
+main()
+{
+	int a1,an,i,a[10],n;
+
+	printf("Enter the number of array \n");
+	scanf("%d",&n);
+
+	printf("Enter the elements \n");
+
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	quicksort(a,0,n-1);
+
+	printf("The sorted elements are\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+
+
+}
+
+void quicksort(int a[], int lb, int ub)
+{
+	int pos;
+	if(lb<ub)
+      {
+		pos=partition(a,lb,ub);
+  		quicksort(a,lb,pos-1);
+  		quicksort(a,pos+1,ub);
+		
+      } 
+
+}
+
+int partition(int a[10], int lb, int ub)
+{
+	int down=lb,up=ub;
+	int pivot=a[lb];
+	int temp;
+
+           while(down<up)
+	{	
+		while(a[down]<=pivot && down<= ub) down++;		
+		while(a[up]>pivot)   up--;
+
+		if(down<up)
+	    {	
+		temp=a[down];
+		a[down]=a[up];
+		a[up]=temp;
+	    }	
+
+	}
+	
+	a[lb]=a[up];
+	a[up]=pivot;
+	return up;
+
+}		
+
+
+/*
+OUTPUT
+
+Enter the elements 
+23 5364 11 1
+The sorted elements are
+1       11      23      5364    [sy44212@cs27 ass2]$ 
+
+*/

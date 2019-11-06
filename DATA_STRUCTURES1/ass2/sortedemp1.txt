@@ -1,0 +1,7 @@
+Abhi	21	32323
+Alok	33	44444
+Komal	18	35777
+Kunal	17	44000
+Om	22	22222
+Push	11	43433
+Shanti	55	77777

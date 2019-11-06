@@ -1,0 +1,98 @@
+/*Create an array of n integers Accept a value x from user and search it using LINEAR SEARCH [FOR SORTED DATA]  */
+
+
+#include<stdio.h>
+void bubble(int a[], int n);
+int search(int a[], int n , int key);
+main()
+{
+
+	int n,i,a[10],p,key;
+
+	printf("Enter the number ELEMENTS in array \n");
+	scanf("%d",&n);
+
+	printf("Enter the elements \n");
+
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	bubble(a,n);
+
+	printf("The sorted elements are\n");
+	for(i=0;i<n;i++)
+		printf("%d\t",a[i]);
+			
+	printf("\nEnter the Element you want to search \n");
+	scanf("%d",&key);
+	p=search(a,n,key);
+	printf("*************************\n");
+	
+	if(p==-1)
+		printf("The Element DOES NOT EXIST!!\n",p);
+	else 
+		printf("The Element is at %d position\n",p);
+
+
+}
+
+
+void bubble(int a[], int n)
+
+{
+	int flag=0;
+	int i,j,temp;
+	for(i=1;i<n;i++)  ///for(i=0;i<n;i++)
+	{
+		///printf("Pass=%d\n",i);
+		if(flag==1)
+		{  printf("Total Passes=%d\n",i);	break;	}
+		for(j=0;j<n-i;j++)  ///for(j=0;j<n-i-1;j++)
+		{	
+			flag=1;
+                        if(a[j]<a[j+1])
+			{				
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				flag=0;	
+				///printf("Swapping=%d\t",j);
+			}	
+
+		}
+			//printf("\n");	
+	}
+
+}
+
+
+int search(int a[], int n , int key)
+
+{
+	int i;
+	for(i=0;i<n && key<a[i] ;i++);
+	{ 
+    	if(a[i]==key)	return i+1; 
+  	}		
+		return -1;
+      
+	
+
+}
+
+/*
+	OUTPUT
+
+Enter the number of array 
+5   
+Enter the elements 
+234 4 332 2 21
+Total Passes=4
+The sorted elements are
+2       4       21      234     332
+Enter the Element you want to search 
+21
+*************************
+The Element is at 3 position
+
+
+*/
