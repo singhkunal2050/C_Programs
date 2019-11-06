@@ -1,0 +1,64 @@
+/* DISPLAY ALL NUMBERS OF THE ARRAY IN REVERSE ORDER */
+
+#include<stdio.h>
+
+void accept (int a[20],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+}
+
+void display (int a[20],int n)
+{
+k=num;
+while(k>=0)
+{
+	for(j=0;j<k-1;j++)
+    {
+	c=a[j];
+	a[j]=a[j+1];
+	a[j+1]=c;
+    }
+	k--;
+}
+
+	printf("After Arranging \n");
+
+for(i=0;i<num;i++)
+printf("%d \n",a[i]);
+}
+
+main()
+{
+int i,a[20],c,k,j,n,num;
+printf("Enter Number Of Elements in Array \n") ;
+scanf("%d",&num);
+printf("Enter Numbers \n") ;
+accept (a[20],n);
+display (a[20], n);
+
+
+	
+}
+
+
+/*
+	OUTPUT
+
+Enter Number Of Elements in Array 
+5
+Enter Numbers 
+432
+2342
+123
+12
+5
+After Arranging 
+5 
+12 
+123 
+2342 
+432 
+
+*/

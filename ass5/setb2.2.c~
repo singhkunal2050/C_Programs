@@ -1,0 +1,14 @@
+/*ACCEPT NO & DISPLAY THE NO WHICH HAS THE MAX SUM OF ITS DIGIT*/
+
+#include<stdio.h>
+main()
+{
+int a,no,i,sum=0,temp,num,n;
+printf("ENTER THE QUANTITY OF UR NOS \n");
+scanf("%d",&no);
+printf("ENTER THE NOS \n");
+scanf("%d",&a);
+
+for(i=2;i<=no;i++)
+{
+

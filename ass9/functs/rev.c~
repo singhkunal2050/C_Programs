@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+int main( )
+{
+int arr[100];
+printf("Enter a String Array \n");
+gets(arr);
+strrev(arr);
+
+printf("Reverse Order is \n %s  \n ",arr);
+return 0;
+
+
+}

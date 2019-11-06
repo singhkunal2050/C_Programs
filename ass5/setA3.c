@@ -1,0 +1,31 @@
+/*n lines of alphabets*/
+#include<stdio.h>
+main()
+{
+
+int n,no,count;	char ch=65;
+printf("ENTER NUMBER OF LINES \n");
+scanf("%d",&no);
+for(n=no;n>=1;n--)
+{
+for(count=1;count<=n;count++)
+{
+printf(" %c \t ",ch++);
+
+}
+printf("\n");
+}
+}
+/*
+OUTPUT
+
+ENTER NUMBER OF LINES 
+5
+ A        B       C       D       E      
+ F        G       H       I      
+ J        K       L      
+ M        N      
+ O       
+
+
+*/

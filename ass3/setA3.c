@@ -1,0 +1,56 @@
+/*ACCEPT NUMBERS AND PERFORM OPERATIONS*/
+
+#include<stdio.h>
+main()
+{
+int x,y,o,Q,R,n;
+printf("ENTER  TWO NUMBERS \n");
+scanf("%d%d",&x,&y);
+
+printf("ENTER  FOR CHECKING \n 1 : EQUIVALENCE \n 2 : LESS THAN  \n 3 : QUOTIENT & REMAINDE%R  \n 4 : RANGE \n 5 : SWAPPING \n");
+scanf("%d",&o);
+switch(o)
+{
+
+case 1 : if(x==y)
+	printf("EQUIVALENCE EXISTS \n");
+	else
+	printf(" NO EQUIVALENCE  \n"); break;
+
+case 2 : if(x>y)
+	printf("%d is GREATER THAN %d \n",x,y);
+	else
+	printf("%d is GREATER THAN %d \n",y,x);break;
+
+case 3 : Q=x/y;R=x%y;
+	printf("%d IS THE QUOTIENT & %d IS THE REMAINDER \n",Q,R);break;
+
+case 4 : printf("ENTER A NUMBER TO CHECK WHETHER IT LIES B|W THE TWO NUMBERS \n");
+	scanf("%d",&n);
+	if(n>x && n<y)
+	printf("%d LIES B|W %d & %d \n",n,x,y);
+	else
+	printf("%d DOES'NT LIES B|W %d & %d \n",n,x,y); break;
+
+case 5 : x=x+y; y=x-y; x=x-y;
+	printf("SWAPPED UR NUMBERS IE  %d & %d ",x,y);break;
+default : printf("ENTER VALID INPUT");break;
+	
+}
+
+}
+/*
+OUTPUT
+
+ENTER  TWO NUMBERS 
+33 45
+ENTER  FOR CHECKING 
+ 1 : EQUIVALENCE 
+ 2 : LESS THAN  
+ 3 : QUOTIENT & REMAINDE%R  
+ 4 : RANGE 
+ 5 : SWAPPING 
+5       
+SWAPPED UR NUMBERS IE  45 & 33
+
+*/
