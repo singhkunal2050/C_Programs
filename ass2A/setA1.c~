@@ -1,0 +1,23 @@
+/* IF ELSE PROGRAM TO FIND EVEN/ODD NO */
+
+#include <stdio.h>
+main()
+{
+int a;
+printf("ENTER a NUMBER TO CHECK WHETHER ITS EVEN OR ODD \n");
+scanf("%d",&a);
+if(a%2==0)
+{
+printf("ITS AN EVEN NUMBER\n");
+} 
+else
+{
+printf("ITS A ODD NUMBER\n");
+}
+
+
+
+
+
+}
+

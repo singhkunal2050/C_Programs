@@ -1,0 +1,258 @@
+Name:Kunal M Singh
+Roll No:34223
+Class:FYBCS
+
+		Exercise 8
+
+-------------------------------------------------------------------------
+
+		SET-A
+
+-------------------------------------------------------------------------
+
+1)
+/*SUM OF DIGITS*/
+
+#include<stdio.h>
+	int  sumD(int n)
+{
+	int s;
+	if(n<=9)
+	return n;
+	else 
+	s=sumD((n%10) +(n/10));
+	return  s;
+}
+
+main()
+{
+int a,b;
+	printf("Enter the Number\n " );
+	scanf("%d",&a);
+	b=sumD(a);
+	printf("%d",b);
+
+}
+
+/*
+	OUTPUT
+
+Enter the Number
+ 122
+5
+
+*/
+
+
+-------------------------------------------------------------------------
+
+
+2)
+/*  CALCULATE GCD USING RECURRSION   */
+
+#include<stdio.h>
+
+	int GCD(int a ,int b);
+
+	main()
+{
+	int a1,b1,g;
+	printf("Enter the TWO NOS FOR GCD \n");
+	scanf("%d%d",&a1,&b1);
+
+	g=GCD(a1,b1);
+
+	printf("%d",g);
+
+}
+
+	int GCD(int a,int b)
+{
+	int  n;
+
+	if(b==0)
+	return a;
+	else 
+	n=(GCD(b,a%b));
+	return n;
+
+}
+
+/*
+	OUTPUT 
+
+Enter the TWO NOS FOR GCD 
+13 65
+13
+Enter the TWO NOS FOR GCD 
+23 54
+1
+Enter the TWO NOS FOR GCD 
+324 1
+1
+
+*/
+
+
+-------------------------------------------------------------------------
+
+
+3)
+/* PROGRAM TO CALCULATE X TO THE POWER Y */
+
+#include<stdio.h>
+	
+	int power(int x,int y);
+	main()
+{
+ 	int x1,y1,p;
+	printf("ENTER THE BASE & INDEX \n");
+	scanf("%d%d",&x1,&y1);
+	p=power(x1,y1);
+	printf("%d^%d =%d",x1,y1,p);
+
+}
+	int power(int x,int y)
+{
+	if(y==0) 	return 1;
+	else 		return (x*power(x,y-1));
+
+
+}
+
+/*
+	OUTPUT
+
+ENTER THE BASE & INDEX 
+2 4
+2^4 =16[
+
+
+*/
+
+
+
+-------------------------------------------------------------------------
+
+		SET-B
+
+-------------------------------------------------------------------------
+
+
+1)
+/*FIBONACCI NUMBERS USING RECURRSION*/
+
+#include<stdio.h>
+
+	int fib(int n);
+	main()
+{
+	int a,b;
+	printf("Enter The  nth Number \n ");
+	scanf("%d",&a);
+	b=fib(a);
+	printf("%d \t",b);
+
+}
+
+int fib(int n)
+{
+	if(n==0 || n==1)
+	return 1;
+	else
+	return (fib(n-2)+fib(n-1));
+}
+
+
+/*
+	OUTPUT
+
+Enter The  nth Number 
+ 5
+8      
+
+*/
+
+
+
+
+-------------------------------------------------------------------------
+
+
+2)
+/*SUM OF DIGITS USING RECURRENCE*/
+
+#include<stdio.h>
+#include<stdio.h>
+	int  sumD(int n)
+{
+	int s;
+	if(n<=9)
+	return n;
+	else 
+	s=sumD((n%10) +(n/10));
+	return  s;
+}
+
+main()
+{
+int a,b;
+	printf("Enter the Number\n " );
+	scanf("%d",&a);
+	b=sumD(a);
+	printf(" SUM OF ALL DIGITS = %d",b);
+
+}
+/*
+	OUTPUT
+
+Enter the Number
+ 123234
+ SUM OF ALL DIGITS = 6
+*/
+
+
+
+
+-------------------------------------------------------------------------
+
+
+3)
+/*PROGRAM TO PRINT 4		3	2  When Inputted  234 */
+
+#include<stdio.h>
+int rec(int n);
+	main()
+{
+	int a,b;
+	printf("Enter The Number \n");
+	scanf("%d",&a);
+	b=rec(a);
+}
+	
+	int r=0,tab;
+	int rec(int n)
+{
+	if(n!=0)
+	{
+		r=(n%10);
+		printf("%d \t",r);
+		rec(n/10);
+	}
+}
+
+
+/*
+	OUTPUT
+
+Enter The Number 
+1232
+2       3       2       1     
+
+
+*/
+
+
+
+-------------------------------------------------------------------------
+

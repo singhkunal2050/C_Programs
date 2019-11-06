@@ -1,0 +1,291 @@
+Name:Kunal M Singh
+Roll No:34223
+Class:FYBCS
+
+		Exercise 6
+		SET-A
+
+-------------------------------------------------------------------------
+
+1)
+/*ACCEPT CHARACTER  & CHECK DIGIT OR ALPHABET*/
+
+#include<stdio.h>
+#include<ctype.h>
+main()
+{
+	char ch;
+	printf("ENTER A CHARACTER TO CHECK \n WHETHER ITS AN ALPHABET , DIGIT OR PUNCTUATION \n ");
+	scanf("%c",&ch);
+
+	if(isalpha(ch))
+	{
+		printf("%c IS AN ALPHABET \n",ch);
+		if(isupper(ch))
+                  	{
+			printf("%c IS IN UPPER CASE \n",ch );
+			ch=tolower(ch);
+			printf("%c IN LOWER CASE \n",ch);
+		}
+
+		else 
+		{
+			 printf("%c IS IN LOWER CASE \n",ch );
+			ch=toupper(ch);
+			printf("%c IN UPPER CASE \n",ch);
+		
+		}
+			
+		
+	}
+
+	else	if(isdigit(ch))
+			printf("%c IS A DIGIT  \n",ch);
+		else       	printf("%c IS A PUNCTUATION  \n",ch);
+	
+	}
+
+/*
+	OUTPUT
+
+ENTER A CHARACTER TO CHECK 
+ WHETHER ITS AN ALPHABET , DIGIT OR PUNCTUATION 
+ k 
+k IS AN ALPHABET 
+k IS IN LOWER CASE 
+K IN UPPER CASE
+
+ENTER A CHARACTER TO CHECK 
+ WHETHER ITS AN ALPHABET , DIGIT OR PUNCTUATION 
+ 4
+4 IS A DIGIT  
+
+*/
+
+
+
+
+2)
+ /*MENU DRIVEN PROGRAM */
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<ctype.h>
+#include<math.h>
+main()
+{
+int n,i,ans,c,flag=1;
+float f,q;
+
+
+	
+
+while(flag)
+	{
+	
+printf("SELECT ANY OF THE OPTIONS  AVAILABLE \n");
+	printf("ENTER \n 1 FOR FINDING POWER \n 2 FOR FINDING SQUARE ROOT \n 3 FLOOR \n 4 CEILING \n 5 EXIT \n");
+	scanf("%d",&c);	
+	switch(c)
+	{
+	case 1 : printf("ENTER THE NUMBER & ITS INDEX \n");
+		scanf("%d%d",&n,&i);
+		ans=(pow(n,i));
+		printf("ANSWER = %d \n" ,ans);
+		break;			
+	case 2 :  printf("ENTER THE NUMBER TO FIND ITS SQRT \n");
+		scanf("%d",&n);
+		ans=sqrt(n);
+		printf("ANSWER = %d \n",ans);
+		break;
+	case 3 :  printf("ENTER THE NUMBER TO FIND ITS floor \n");
+		scanf("%f",&q);
+		ans=floor(q);
+		printf("ANSWER = %f \n",ans);
+		break;
+	case 4 :  printf("ENTER THE NUMBER TO FIND ITS CEILING \n");
+		scanf("%f",&f);
+		ans=floor(f);
+		printf("ANSWER = %f \n",ans);
+		break;
+		case 5 : flag =0;break;
+	default : printf("INVALID INPUT PLEASE RETRY \n");break;
+
+
+	}
+	}
+}
+
+/*
+ OUTPUT 
+
+SELECT ANY OF THE OPTIONS  AVAILABLE 
+ENTER 
+ 1 FOR FINDING POWER 
+ 2 FOR FINDING SQUARE ROOT 
+ 3 FLOOR 
+ 4 CEILING 
+ 5 EXIT 
+1
+ENTER THE NUMBER & ITS INDEX 
+3 0
+ANSWER = 1 
+SELECT ANY OF THE OPTIONS  AVAILABLE 
+ENTER 
+ 1 FOR FINDING POWER 
+ 2 FOR FINDING SQUARE ROOT 
+ 3 FLOOR 
+ 4 CEILING 
+ 5 EXIT 
+
+
+*/
+
+
+-------------------------------------------------------------------------
+		SET-B
+
+-------------------------------------------------------------------------
+
+
+1)
+/*MENU DRIVEN PROGRAM ON FRACTIONS  */
+
+#include<stdio.h>
+main()
+{
+float n1,d1,n2,d2,i;
+int c,flag=1;
+float ans;
+
+while(flag)
+
+{
+printf("Enter Numerator & Denominator of First No \n");
+scanf("%f%f",&n1,&d1);
+
+printf("Enter Numerator & Denominator of Second No \n");
+scanf("%f%f",&n2,&d2);
+
+	printf("SELECT ANY OF THE OPTIONS  AVAILABLE \n");
+	printf("ENTER \n 1 FOR ADDITION  \n 2 FOR Subtraction \n 3 FOR MULTIPLICATION  \n 4 EXIT \n ");
+	scanf("%d",&c);	
+	switch(c)
+	{
+	case 1 :    ans=(float)(n1/d1) + (float)(n2/d2);
+		printf("THE ADDITION = %f \n",ans);
+		break;		
+	
+	case 2 :  ans=(float)(n1/d1) - (float)(n2/d2);
+		printf("THE SUBTRACTION  = %f \n",ans);
+		break;
+
+	case 3 :  ans=(float)(n1/d1) * (float)(n2/d2);
+		printf("THE Multiplication  = %f \n",ans);
+		break;
+	
+	case 4 : flag =0;break;
+	default : printf("INVALID INPUT PLEASE RETRY \n");
+
+	}
+	}
+}
+
+
+
+/*
+	OUTPUT
+
+Enter Numerator & Denominator of First No 
+2 3
+Enter Numerator & Denominator of Second No 
+123 4
+SELECT ANY OF THE OPTIONS  AVAILABLE 
+ENTER 
+ 1 FOR ADDITION  
+ 2 FOR Subtraction 
+ 3 FOR MULTIPLICATION  
+ 4 EXIT 
+ 3
+THE Multiplication  = 20.500000 
+Enter Numerator & Denominator of First No 
+
+
+
+*/
+
+
+
+2)
+
+/*MENU DRIVEN PROGRAM ON X & Y COORDINATES   */
+
+#include<stdio.h>
+#include<math.h>
+main()
+{
+float  x1,y1,x2,y2;
+int c,flag=1;
+float ans;
+
+while(flag)
+
+{
+printf("Enter THE  X & Y  COORDINATES OF FIRST POIUNT  \n");
+scanf("%f%f",&x1,&y1);
+
+printf("Enter THE  X & Y  COORDINATES OF SECOND  POIUNT  \n");
+scanf("%f%f",&x2,&y2);
+
+	printf("SELECT ANY OF THE OPTIONS  AVAILABLE \n");
+	printf("ENTER \n 4  FOR DISTANCE B|W POINTS  \n 5 FOR SLOPE B|W POINTS \n 6 FOR CHECKING QUADRANT   \n 7 EXIT \n ");
+	scanf("%d",&c);	
+	switch(c)
+	{
+	case 4 :    ans=sqrt((x1-x2)*(x1-x2) -(y1-y2)*(y1-y2));
+		printf("THE DISTANCE B|W  THE 2 POINTS = %f \n",ans);
+		break;		
+	
+	case 5 :  ans=(y2-y1)/(x2-x1);
+		printf("THE SLOPE  B|W  THE 2 POINTS = %f \n",ans);
+		break;
+
+	case 6 :   if((x1>0&& y1>0)&&(x2>0&& y2>0)  || (x1<0 && y1>0)&&(x2<0 && y2>0)  || (x1<0&&y1<0)&&(x2<0&&y2<0) || (x1>0&& y2<0)&&(x2>0&& y2<0))
+		printf("THE TWO POINTS LIE IN THE SAME QUADRANT \n");
+		else
+		printf("THE TWO POINTS  DONT LIE IN THE SAME QUADRANT \n");break;
+	
+	case 7 : flag =0;break;
+	default : printf("INVALID INPUT PLEASE RETRY \n");
+
+	}
+	}
+}
+
+
+/*
+             OUTPUT
+
+Enter THE  X & Y  COORDINATES OF FIRST POIUNT  
+3 5
+Enter THE  X & Y  COORDINATES OF SECOND  POIUNT  
+5 -4
+SELECT ANY OF THE OPTIONS  AVAILABLE 
+ENTER 
+ 4  FOR DISTANCE B|W POINTS  
+ 5 FOR SLOPE B|W POINTS 
+ 6 FOR CHECKING QUADRANT   
+ 7 EXIT 
+ 5
+THE SLOPE  B|W  THE 2 POINTS = -4.500000 
+Enter THE  X & Y  COORDINATES OF FIRST POIUNT  
+
+
+
+
+*/
+
+
+
+
+--------------------------------------------------------------------------

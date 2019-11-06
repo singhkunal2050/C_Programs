@@ -1,0 +1,70 @@
+/*USER DEFINED FUNCTION ISPRIME */
+
+#include<stdio.h>
+int Prime(int no);
+main()
+{
+	int no,i,cnt=10,c;
+	printf("\n ENTER A NUMBER  : \n");
+	scanf("%d",&no);
+
+	for(i=0;i<cnt;) 
+	{
+		c=Prime(no);	
+
+		if(c==1)
+		{
+			printf("\n %d  \n",no);
+			i++;
+		}
+		no++;
+	}	
+}
+
+
+int Prime(int num )
+{
+	int i, flag =0;
+
+	for(i=2;i<=num/2;++i)
+	{
+		if(num%i==0)
+		{ 
+			flag=1;
+		}
+	}
+	if(flag==0)	
+return 1;
+		else 		
+return 0;
+}
+
+/*
+OUTPUT
+
+ ENTER A NUMBER  : 
+2
+
+ 2  
+
+ 3  
+
+ 5  
+
+ 7  
+
+ 11  
+
+ 13  
+
+ 17  
+
+ 19  
+
+ 23  
+
+ 29  
+
+*/
+
+

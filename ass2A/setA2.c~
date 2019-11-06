@@ -1,0 +1,31 @@
+/* PROGRAM TO CHECK WHETHER THE FIRST NUMBER LIES B|W SECOND & THIRD */
+
+#include <stdio.h>
+main()
+{
+int a,b,c;
+printf("ENTER 3 NUMBERs TO CHECK WHETHER THE FIRST NUMBER LIES B|W SECOND & THIRD \n");
+scanf("%d%d%d",&a,&b,&c);
+if(b<a && a<c)
+{
+printf("THE FIRST NUMBER LIES B|W SECOND & THIRD\n");
+} 
+else
+{
+printf("THE FIRST NUMBER DOES'NT LIE B|W SECOND\n");
+}
+
+}
+
+/*
+OUTPUT
+
+ENTER 3 NUMBERs TO CHECK WHETHER THE FIRST NUMBER LIES B|W SECOND & THIRD 
+21 1 44
+THE FIRST NUMBER LIES B|W SECOND & THIRD
+
+
+*/
+
+
+

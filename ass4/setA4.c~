@@ -1,0 +1,21 @@
+/*DISPLAY N CHARACTERS*/
+
+#include<stdio.h>
+main()
+{
+
+char a;
+int n,i;
+printf("ENTER A CHARACTER \n");
+scanf("%c",&a);
+
+printf("ENTER AN INTEGER n \n");
+scanf("%d",&n);
+
+for(i=1;i<=n;i++) 
+{
+printf("CHAR IS %c \n",a++);
+}
+
+
+}

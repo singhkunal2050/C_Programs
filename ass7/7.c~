@@ -1,0 +1,275 @@
+Name:Kunal M Singh
+Roll No:34223
+Class:FYBCS
+
+		Exercise 7
+		SET-A
+
+-------------------------------------------------------------------------
+
+
+1)
+	/* CREATING FUNCTION FOR N EVEN NUMBERS */
+
+	#include<stdio.h>
+
+	 int IsEven(int n)
+	{
+
+	if(n%2==0)  return 1; 
+	else return 0;
+	}
+
+
+	main()
+	{
+	int f,i,no;
+	
+		printf("ENTER HOW MANY NOS U HAVE TO CHECK \n");
+		scanf("%d",&f);
+3)
+	for(i=1;i<=f;i++)
+
+	{
+		printf(" \nENTER NUM \n ");
+		scanf("%d",&no);
+	if(IsEven(no))
+		printf(" %d  IS EVEN\t",no);
+	else;
+	
+
+	}
+	}
+
+
+/*
+OUTPUT
+
+ENTER HOW MANY NOS U HAVE TO CHECK 
+5
+ENTER NUM 
+ 223
+ENTER3) NUM 
+ 23
+ENTER NUM 
+ 54
+ 54  IS EVEN    
+ENTER NUM 
+ 34
+ 34  IS EVEN
+ENTER NUM 
+ 2 
+ 2  IS EVEN    
+
+*/
+
+
+
+
+2)
+/*DISPLAY NEXT DIGIT & CHARACYER */
+
+#include<stdio.h>
+
+nxt(int3) n,char c)
+{
+	int i;
+	for(i=1;i<=n;i++)	
+	{
+		printf("%c\t",++c);
+	}
+}
+
+main()
+{
+
+	int no;
+	char ch;
+
+	printf("ENTER THE  CHAR \n");
+	scanf("%c",&ch);
+	printf("Enter num. :");
+	scanf("%d",&no);
+	3)nxt(no,ch);
+}
+
+/*
+OUTPUT
+
+ENTER THE  CHAR 
+g 
+Enter num :12
+h       i       j       k       l       m       n       o       p       q      r	 s      
+
+
+*/
+
+-------------------------------------------------------------------------
+
+		SET-B
+
+-------------------------------------------------------------------------
+
+
+1)
+#include<stdio.h>
+int Prime(int no);
+main()
+{
+	int no,i,cnt=10,c;
+	printf("\n ENTER A NUMBER  : \n");
+	scanf("%d",&no);
+
+	for(i=0;i<cnt;) 
+	{
+		c=Prime(no);	
+
+		if(c==1)
+		{
+			printf("\n %d  \n",no);
+			i++;
+		}
+		no++;
+	}	
+}
+
+
+int Prime(int num )
+{
+	int i, flag =0;
+
+	for(i=2;i<=num/2;++i)
+	{
+		if(num%i==0)
+		{ 
+			flag=1;
+		}
+	}
+	if(flag==0)	
+return 1;
+		else 		
+return 0;
+}
+
+/*
+OUTPUT
+
+ ENTER A NUMBER  : 
+2
+
+ 2  
+
+ 3  
+
+ 5  
+
+ 7  
+
+ 11  
+
+ 13  
+
+ 17  
+
+ 19  
+
+ 23  
+
+ 29  
+
+*/
+
+
+
+
+2)
+#include <stdio.h>
+#include<ctype.h>
+
+int except(char c)
+{
+	printf("Enter A Char \n ");
+	 
+	{
+		if(isalpha(c))
+		{
+			return 1;
+		}
+		if(isdigit(c))
+		{		
+			return 2;
+		}		
+		if(ispunct(c)) 
+		{			
+			return 3;
+		}
+		
+}
+
+}
+
+main()
+{
+	int cntc=0,cntd=0,cntp=0;
+	int p;
+	char c;
+	while((c=getchar())!=EOF)
+{
+
+	p=except(c);
+
+	if(p==1)
+	{	
+		cntc++;		
+		printf("%c IS A ALPHABET \n",c);
+
+	}
+
+	if(p==2)
+	{
+		cntd++;
+		printf("%c IS A DIGIT \n",c); 
+	}
+
+	if (p==3)
+	{
+		cntp++;
+		printf("%c IS A SPECIAL SYMBOL  \n",c);
+	}
+
+}
+	printf("THE NUMBER OF ALPHA DIGS  & PUNCTUATIONS   ARE %d %d  %d\n",cntc,cntd,cntp);
+
+}
+
+/*
+		OUTPUT
+
+1 2 4
+Enter A Char 
+ 1 IS A DIGIT 
+Enter A Char 
+ Enter A Char 
+ 2 IS A DIGIT 
+Enter A Char 
+ Enter A Char 
+ 4 IS A DIGIT 
+Enter A Char 
+ @ d
+Enter A Char 
+ @ IS A SPECIAL SYMBOL  
+Enter A Char 
+ Enter A Char 
+ d IS A ALPHABET 
+Enter A Char 
+ THE NUMBER OF ALPHA DIGS  & PUNCTUATIONS   ARE 1 3  1
+
+
+*/
+
+
+
+3)
+
+
+
